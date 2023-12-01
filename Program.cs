@@ -11,7 +11,8 @@ List<Product> products = new List<Product>()
         Name = "Pointy Hat",
         Price = 10.23M,
         IsAvailable = true,
-        ProductTypeId = 1
+        ProductTypeId = 1,
+        DateStocked = new DateTime(2023, 6, 1)
     },
     new Product()
     {
@@ -19,7 +20,8 @@ List<Product> products = new List<Product>()
         Name = "Black Fire Potion",
         Price = 50.24M,
         IsAvailable = false,
-        ProductTypeId = 2
+        ProductTypeId = 2,
+        DateStocked = new DateTime(2023, 2, 9)
     },
     new Product()
     {
@@ -27,7 +29,8 @@ List<Product> products = new List<Product>()
         Name = "Cloak of Invisibility",
         Price = 150.54M,
         IsAvailable = false,
-        ProductTypeId = 3
+        ProductTypeId = 3,
+        DateStocked = new DateTime(2023, 11, 10)
     },
     new Product()
     {
@@ -35,7 +38,8 @@ List<Product> products = new List<Product>()
         Name = "15inch Wood Wand",
         Price = 5.29M,
         IsAvailable = true,
-        ProductTypeId = 4
+        ProductTypeId = 4,
+        DateStocked = new DateTime(2023, 1, 16)
     }
 };
 
@@ -125,7 +129,7 @@ while (choice != "0")
 
 string ProductDetails(Product product)
 {
-    string productString = $"{product.Name} is priced at ${product.Price} and is {(product.IsAvailable ? "available" : $"not available")} at this time.";
+    string productString = $"{product.Name} is priced at ${product.Price} and is {(product.IsAvailable ? "available" : $"not available")} at this time. Stocked Date: {product.DateStocked} Days in Stock: {product.DaysOnShelf}";
     return productString;
 }
 
@@ -335,4 +339,3 @@ void ViewProductsByType()
         Console.WriteLine("Invalid input. Please enter a valid number.");
     }
 }
-
